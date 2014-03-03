@@ -1,0 +1,9 @@
+#search forward / backwards in history using UP and DOWN
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+#single tab suggestions
+set show-all-if-ambiguous on
+
+#auto completion ignores case
+set completion-ignore-case on
