@@ -7,3 +7,6 @@ set show-all-if-ambiguous on
 
 #auto completion ignores case
 set completion-ignore-case on
+
+#put / after directory names and * after programs
+set visible-stats on
