@@ -1,7 +1,12 @@
 export GIT_PS1_SHOWDIRTYSTATE=true
 export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$ \[\033[00m\]'
 
-alias ll='ls -la'
+#add some colour
+alias ls='ls --color=auto'
+alias ll='ls -la --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # directory navigation
 alias ..='cd ..'
