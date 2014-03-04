@@ -15,7 +15,7 @@ alias wget='wget -c'
 
 #Interactive and verbose mv, cp & rm commands
 alias mv='mv -i -v'
-alias cp='mv -i -v'
+alias cp='cp -i -v'
 alias rm='rm -i -v'
 
 #handy alternative
