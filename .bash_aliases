@@ -1,5 +1,7 @@
 export GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\w$(__git_ps1 " [\[\e[34;1m\]%s\[\e[0m\]]")\$ '
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$ \[\033[00m\]'
+
+alias ll='ls -la'
 
 # directory navigation
 alias ..='cd ..'
