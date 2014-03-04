@@ -6,6 +6,10 @@ if [ -f ~/.bashrc.private ]; then
   source ~/.bashrc.private
 fi
 
+#increase HISTSIZE and HISTFILESIZE
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 #Ignore duplicates and lines starting with a space
 export HISTCONTROL=ignoreboth #ignore (successive) duplicates in history
 
@@ -15,3 +19,7 @@ shopt -s histappend
 
 #ignore spelling mistakes when changing directory
 shopt -s cdspell
+
+#check windowsize after each command and adapt if necessary
+shopt -s checkwinsize
+
