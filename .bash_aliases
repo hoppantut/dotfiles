@@ -18,10 +18,11 @@ alias ......='cd ../../../../..'
 #Continue previously aborted download by default if possible
 alias wget='wget -c'
 
-#Interactive and verbose mv, cp & rm commands
+#Interactive and verbose commands
 alias mv='mv -i -v'
 alias cp='cp -i -v'
 alias rm='rm -i -v'
+alias ln='ln -i -v'
 
 #handy alternative
 alias top='htop'
