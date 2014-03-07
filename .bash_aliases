@@ -28,3 +28,5 @@ alias ln='ln -i -v'
 alias top='htop'
 alias df='df -h'
 
+#git-related aliases
+alias gitg='gitg -c'
