@@ -30,3 +30,6 @@ alias df='df -h'
 
 #git-related aliases
 alias gitg='gitg -c'
+
+#flush memcached
+alias flush='echo "flush_all" | netcat localhost 11211'
