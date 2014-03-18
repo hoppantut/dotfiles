@@ -1,2 +1,6 @@
 [push]
 	default = current
+[gui]
+	diffcontext = 3
+[color]
+	ui = auto
