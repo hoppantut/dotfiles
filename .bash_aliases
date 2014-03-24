@@ -3,7 +3,7 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\w\[\033[01;32m\]$(
 
 #add some colour
 alias ls='ls --color=auto'
-alias ll='ls -la --color=auto'
+alias ll='ls -la'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
