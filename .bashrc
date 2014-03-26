@@ -23,3 +23,5 @@ shopt -s cdspell
 #check windowsize after each command and adapt if necessary
 shopt -s checkwinsize
 
+#set direxpand so that variable names are NOT prepended by \ (ie. $ turns into \$) when auto suggesting
+shopt -s direxpand
