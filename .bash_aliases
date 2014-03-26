@@ -1,5 +1,5 @@
 export GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$ \[\033[00m\]'
+export PS1='${debian_chroot:+($debian_chroot)}\u@\h:\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$ \[\033[00m\]'
 
 #add some colour
 alias ls='ls --color=auto'
