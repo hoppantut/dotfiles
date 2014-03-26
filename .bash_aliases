@@ -1,5 +1,9 @@
 export GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='${debian_chroot:+($debian_chroot)}\u@\h:\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$ \[\033[00m\]'
+if [ -z "$SSH_CONNECTION" ]; then
+    export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$ \[\033[00m\]'
+else
+    export PS1='${debian_chroot:+($debian_chroot)}\u@\[\033[0;31m\]\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$ \[\033[00m\]'
+fi
 
 #add some colour
 alias ls='ls --color=auto'
@@ -33,3 +37,6 @@ alias gitg='gitg -c'
 
 #flush memcached
 alias flushed='echo "flush_all" | netcat localhost 11211'
+
+#go to "default" dotfiles cataloge
+alias dotfiles='cd $HOME/dotfiles'
