@@ -1,6 +1,10 @@
 " reset options when resourcing local .vimrc
 set nocompatible
 
+" Set early so parts can be overwritten later
+colorscheme desert
+set background=dark
+
 " auto read file when changed externally
 set autoread
 
@@ -28,6 +32,10 @@ set laststatus=2
 
 " display line numbers
 set number
+set cursorline
+hi CursorLine     cterm=bold
+hi LineNr         ctermfg=black
+hi CursorLineNr   cterm=bold ctermfg=gray
 
 " command window height, 2 lines
 set cmdheight=2
@@ -42,9 +50,14 @@ set softtabstop=4
 
 " indicate matching brackets
 set showmatch
-" how long to blink matching brackets
-set mat=2
+set mat=2 "how long matching brackets blink
 
-colorscheme desert
-set background=dark
+" attempt to identify filetype and indentation
+filetype plugin on
+filetype indent on
 
+" Always show the status line
+set laststatus=2
+
+" Format the status line
+set statusline=\ %F%m%r%h\ %w\ \ %h\ %=%P\ %l:%L,%c
