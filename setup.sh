@@ -1,5 +1,7 @@
 #!/bin/bash
 log=`basename $0`.log
+
+command -v realpath >/dev/null 2>&1 || { echo >&2 "realpath is not installed.  Aborting."; exit 1; }
 exec >  >(tee -a ${log})
 exec 2> >(tee -a ${log} >&2)
 
@@ -9,6 +11,7 @@ for dotfile in `find . -type f \( -iname ".*" -not -iname ".*.*" \) -printf "%f\
 
     if [[ ${dotfile} == .git* ]]; then
         echo "  ${dotfile} is a git file. Skipping"
+        continue
     fi
 
     if [ -f $HOME/${dotfile} ] && [ "`md5sum $HOME/${dotfile} | awk '{ print $1 }'`" = "`md5sum ${dotfile} | awk '{ print $1 }'`" ]; then
@@ -20,6 +23,6 @@ for dotfile in `find . -type f \( -iname ".*" -not -iname ".*.*" \) -printf "%f\
             mv $HOME/${dotfile} $HOME/${dotfile}.backup
         fi
         echo "    Making symbolic link..."
-        ln -sv $(realpath ${dotfile}) $HOME/$(basename ${dotfile})
+        ln -s $(realpath ${dotfile}) $HOME/$(basename ${dotfile})
     fi
 done
