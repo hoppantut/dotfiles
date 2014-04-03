@@ -40,3 +40,8 @@ alias flushed='echo "flush_all" | netcat localhost 11211'
 
 #go to "default" dotfiles cataloge
 alias dotfiles='cd $HOME/dotfiles'
+
+function pless() {
+    command -v pygmetize >/dev/null 2>&1 || { echo >&2 "pygmetize is not installed.   Aborting."; return; }
+    pygmentize -g $* | less -R
+}
