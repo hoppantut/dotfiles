@@ -1,7 +1,7 @@
 #!/bin/bash
 log=`basename $0`.log
 
-command -v realpath >/dev/null 2>&1 || { echo >&2 "realpath is not installed.  Aborting."; exit 1; }
+command -v realpath >/dev/null 2>&1 || { echo >&2 "realpath is not installed.  Aborting."; return; }
 exec >  >(tee -a ${log})
 exec 2> >(tee -a ${log} >&2)
 
