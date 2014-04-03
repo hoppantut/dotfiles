@@ -1,9 +1,9 @@
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+if [ -f ~/.bashrc.private ]; then                                                                                                                                                                                                 
+   source ~/.bashrc.private
 fi
 
-if [ -f ~/.bashrc.private ]; then
-  source ~/.bashrc.private
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
 fi
 
 #increase HISTSIZE and HISTFILESIZE
