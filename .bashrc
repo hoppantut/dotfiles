@@ -1,9 +1,13 @@
-if [ -f ~/.bashrc.private ]; then                                                                                                                                                                                                 
-   source ~/.bashrc.private
+if [ -f ~/.bashrc.required ]; then
+   source ~/.bashrc.required
 fi
 
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
+fi
+
+if [ -f ~/.bashrc.private ]; then
+    source ~/.bashrc.private
 fi
 
 #increase HISTSIZE and HISTFILESIZE
