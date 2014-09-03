@@ -45,3 +45,5 @@ function pless() {
     command -v pygmentize >/dev/null 2>&1 || { echo >&2 "pygmetize is not installed.   Aborting."; return; }
     pygmentize -g $* | less -R
 }
+
+alias less='less -N'
