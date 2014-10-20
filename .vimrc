@@ -61,3 +61,6 @@ set laststatus=2
 
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ \ %h\ %=%P\ %l:%L,%c
+
+"Set paste always on by default
+set paste
