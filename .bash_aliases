@@ -24,6 +24,8 @@ alias ......='cd ../../../../..'
 #Continue previously aborted download by default if possible
 alias wget='wget -c'
 
+#Make curl follow redirects by default
+alias curl='curl -L'
 #Interactive and verbose commands
 alias mv='mv -i -v'
 alias cp='cp -i -v'
