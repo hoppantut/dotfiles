@@ -29,7 +29,7 @@ HISTFILESIZE=-1
 export HISTCONTROL=ignoreboth #ignore (successive) duplicates in history
 
 #rewrite history, append commands to history
-export PROMPT_COMMAND="history -a; history -n"
+export PROMPT_COMMAND="history -a"
 shopt -s histappend
 
 #ignore spelling mistakes when changing directory
