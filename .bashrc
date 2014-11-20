@@ -21,9 +21,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#increase HISTSIZE and HISTFILESIZE
-HISTSIZE=1000
-HISTFILESIZE=2000
+#unlimited HISTSIZE and HISTFILESIZE
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 #Ignore duplicates and lines starting with a space
 export HISTCONTROL=ignoreboth #ignore (successive) duplicates in history
