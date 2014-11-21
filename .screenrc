@@ -1,0 +1,2 @@
+startup_message off
+hardstatus alwayslastline '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%d.%m.%Y%{= Kc} %c%{-}'
