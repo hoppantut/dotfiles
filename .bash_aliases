@@ -51,4 +51,4 @@ function pless() {
 
 alias less='less -N'
 
-runsOnPort() { netstat -tulpn | grep :$@; }
+runsOnPort() { sudo netstat -tulpn | grep :$@; }
