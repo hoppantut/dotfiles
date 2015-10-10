@@ -8,7 +8,7 @@ else
 fi
 
 #add some colour
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -la'
 alias grep='grep --color=auto'
 alias bzgrep='bzgrep --color=auto'
