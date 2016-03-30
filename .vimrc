@@ -1,6 +1,10 @@
 " reset options when resourcing local .vimrc
 set nocompatible
 
+" hide buffer on change
+set hidden
+set history=100
+
 " Set early so parts can be overwritten later
 colorscheme desert
 set background=dark
@@ -10,6 +14,10 @@ set autoread
 
 " enable syntax highlighting
 syntax on
+
+" Color code columns (annoying, maybe?)
+hi ColorColumn ctermbg=black
+let &colorcolumn="90,".join(range(120,999),",")
 
 " enable highlighted search 
 set hlsearch
@@ -53,6 +61,7 @@ set showmatch
 set mat=2 "how long matching brackets blink
 
 " attempt to identify filetype and indentation
+filetype on
 filetype plugin on
 filetype indent on
 
