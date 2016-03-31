@@ -1,6 +1,8 @@
 " reset options when resourcing local .vimrc
 set nocompatible
 
+let mapleader=" "
+
 " hide buffer on change
 set hidden
 set history=100
