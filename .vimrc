@@ -2,6 +2,7 @@
 set nocompatible
 
 let mapleader=" "
+map <leader>s :source ~/.vimrc<CR>
 
 " hide buffer on change
 set hidden
