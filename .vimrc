@@ -21,6 +21,8 @@ let &colorcolumn="90,".join(range(120,999),",")
 
 " enable highlighted search 
 set hlsearch
+nnoremap <silent><esc> :noh<CR>
+nnoremap <esc>^[ <esc>^[
 
 " case insensitive search (except while using capital letters)
 set ignorecase
