@@ -21,6 +21,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#Disable XON/XOFF so meta-s can be used to search forward in history
+[[ $- == *i* ]] && stty -ixon
+
 #unlimited HISTSIZE and HISTFILESIZE
 HISTSIZE=
 HISTFILESIZE=
