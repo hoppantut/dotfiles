@@ -61,6 +61,6 @@ function pless() {
     pygmentize -g $* | less -R
 }
 
-alias less='less -N'
+export LESS='-NPs%f \:\:\: lines %lt-%lb/%L (%Pt-%Pb \%) bytes %bt-%bb'
 
 runsOnPort() { sudo netstat -tulpn | grep :$@; }

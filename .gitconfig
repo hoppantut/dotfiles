@@ -4,3 +4,5 @@
 	diffcontext = 3
 [color]
 	ui = auto
+[core]
+	pager = less -r
