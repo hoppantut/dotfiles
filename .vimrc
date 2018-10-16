@@ -89,3 +89,7 @@ if has('persistent_undo')
     set undolevels=5000
     set undofile
 endif
+
+" Centrized swap-files
+let &directory = expand(vimDir . '/swp//' )
+call system('mkdir -p ' . &directory)
