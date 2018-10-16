@@ -1,3 +1,7 @@
+" Put plugins and dictionaries in this dir (also on Windows)
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
 " reset options when resourcing local .vimrc
 set nocompatible
 
@@ -78,3 +82,10 @@ set statusline=\ %F%m%r%h\ %w\ \ %h\ %=%P\ %l:%L,%c
 
 "Set paste always on by default
 set paste
+
+if has('persistent_undo')
+    let &undodir = expand(vimDir . '/undo')
+    call system('mkdir -p ' . &undodir)
+    set undolevels=5000
+    set undofile
+endif
