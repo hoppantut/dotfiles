@@ -7,6 +7,7 @@ set nocompatible
 
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
+map <leader>j :call PpJson()<CR>
 
 " hide buffer on change
 set hidden
@@ -90,6 +91,15 @@ if has('persistent_undo')
     set undofile
 endif
 
-" Centrized swap-files
+" Centralized swap-files
 let &directory = expand(vimDir . '/swp//' )
 call system('mkdir -p ' . &directory)
+
+" JSON pretty print
+function! PpJson()
+  :%! jq "."
+  if v:shell_error
+    :normal u
+  endif
+  set syntax=json
+endfunction
