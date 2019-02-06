@@ -2,20 +2,16 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
-if [ -z "$SSH_CONNECTION" ]; then
-    if git --version &>/dev/null; then
-        export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$\[\033[00m\] '
-    else
-        export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\w\[\033[01;32m\] \[\033[01;36m\]$ \[\033[00m\]'
-    fi
-else
-    # ssh connection
-    if git --version &>/dev/null; then
-        export PS1='${debian_chroot:+($debian_chroot)}\u@\[\033[0;31m\]\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;32m\]$(__git_ps1) \[\033[01;36m\]$\[\033[00m\] '
-    else
-        export PS1='${debian_chroot:+($debian_chroot)}\u@\[\033[0;31m\]\h\[\033[00m\]:\[\033[01;33m\]\w\[\033[01;32m\] \[\033[01;36m\]$\[\033[00m\] '
-    fi
-fi
+Reset=$(tput sgr0)
+Red=$(tput setaf 1)
+BYellow=$(tput bold; tput setaf 3)
+BGreen=$(tput bold; tput setaf 2)
+BCyan=$(tput bold; tput setaf 6)
+
+#determine if git is present
+git --version &>/dev/null && hasGit=true || hasGit=
+
+export PS1='${debian_chroot:+($debian_chroot)}${SSH_CONNECTION:+\u@\[$Red\]\h\[$Reset\]:}\[$BYellow\]\w${hasGit:+\[$BGreen\]$(__git_ps1)} \[$BCyan\]$\[$Reset\] '
 
 #add some colour
 alias ls='ls --color=auto --group-directories-first'
