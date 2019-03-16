@@ -1,3 +1,3 @@
-if [ -f ~/.bashrc ]; then
+if [[ $- == *i* && -f ~/.bashrc ]]; then
     source ~/.bashrc
 fi
