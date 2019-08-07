@@ -7,7 +7,9 @@ set nocompatible
 
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
+map <leader>e :Explore<CR>
 map <leader>j :call PpJson()<CR>
+map <leader>x :call PpXml()<CR>
 
 " hide buffer on change
 set hidden
@@ -25,7 +27,7 @@ syntax on
 
 " Color code columns (annoying, maybe?)
 hi ColorColumn ctermbg=black
-let &colorcolumn="90,".join(range(120,999),",")
+let &colorcolumn="120"
 
 " enable highlighted search 
 set hlsearch
@@ -51,7 +53,7 @@ set laststatus=2
 " display line numbers
 set number
 set cursorline
-hi CursorLine     cterm=bold
+hi CursorLine     cterm=bold ctermbg=black
 hi LineNr         ctermfg=black
 hi CursorLineNr   cterm=bold ctermfg=gray
 
@@ -59,12 +61,7 @@ hi CursorLineNr   cterm=bold ctermfg=gray
 set cmdheight=2
 
 " Use spaces instead of tabs
-set expandtab
-set smarttab
-
-" tab converts to 4 spaces
-set shiftwidth=4
-set softtabstop=4
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " indicate matching brackets
 set showmatch
@@ -102,4 +99,13 @@ function! PpJson()
     :normal u
   endif
   set syntax=json
+endfunction
+
+" XML pretty print
+function! PpXml()
+  :%! xmllint --format --recover -
+  if v:shell_error
+    :normal u
+  endif
+  set syntax=xml
 endfunction
