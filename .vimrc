@@ -7,9 +7,12 @@ set nocompatible
 
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
-map <leader>e :Explore<CR>
+map <leader>e :Rexplore<CR>
 map <leader>j :call PpJson()<CR>
 map <leader>x :call PpXml()<CR>
+
+" :E remapped to :Re[xplore]
+command E Re
 
 " hide buffer on change
 set hidden
