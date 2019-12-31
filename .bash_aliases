@@ -2,6 +2,7 @@ export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWSTASHSTATE=true
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 
+if [[ $- == *i* ]]; then
 Reset=$(tput sgr0)
 Red=$(tput setaf 1)
 BYellow=$(tput bold; tput setaf 3)
@@ -12,7 +13,7 @@ BCyan=$(tput bold; tput setaf 6)
 git --version &>/dev/null && hasGit=true || hasGit=
 
 export PS1='${debian_chroot:+($debian_chroot)}${SSH_CONNECTION:+\u@\[$Red\]\h\[$Reset\]:}\[$BYellow\]\w${hasGit:+\[$BGreen\]$(__git_ps1)} \[$BCyan\]$\[$Reset\] '
-
+fi
 #add some colour
 alias ls='ls --color=auto --group-directories-first'
 alias ll='ls -la'
