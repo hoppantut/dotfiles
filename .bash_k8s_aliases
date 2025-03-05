@@ -1,0 +1,49 @@
+alias wk='watch -c -e -d kubectl'
+kns() {
+    query="--query=${1}"
+    if [ ! "$#" -gt 0 ];
+    then
+        kubectl ns
+    elif [ "$1" = "-" ];
+    then
+        kubectl ns -
+    elif selected=$(kubectl get ns --no-headers -o custom-columns=":metadata.name" | fzf ${query} --select-1)
+    then
+        kubectl ns ${selected}
+    fi
+}
+
+kctx() {
+    query="--query=${1}"
+    if [ ! "$#" -gt 0 ]
+    then
+        kubectl ctx
+    elif [ "$1" = "-" ];
+        then
+            kubectl ctx -
+    elif selected=$(k config get-contexts --no-headers -o name | fzf ${query} --select-1)
+    then
+        kubectl ctx ${selected}
+    fi
+}
+
+krsh() {
+    query="--query=${1}"
+    if [ ! "$#" -gt 0 ]; then query=""; fi;
+
+    if selected=$(kubectl get po --no-headers -o custom-columns=":metadata.name" --sort-by=.metadata.creationTimestamp | fzf ${query} --select-1 --tac --preview 'kubectl get po {}')
+    then
+      kubectl exec -it ${selected} -- bash
+    fi
+}
+
+
+klogs() {
+    query="--query=${1}"
+    if [ ! "$#" -gt 0 ]; then query=""; fi;
+
+    if selected=$(kubectl get po --no-headers -o custom-columns=":metadata.name" --sort-by=.metadata.creationTimestamp | fzf ${query} --select-1 --tac --preview 'kubectl get po {}')
+    then
+      kubectl logs ${selected}
+    fi
+}
